@@ -3,6 +3,13 @@
 [![CodeQL](https://github.com/uyamazak/hc-pdf-server/workflows/CodeQL/badge.svg)](https://github.com/uyamazak/hc-pdf-server/actions?query=workflow%3ACodeQL)
 [![Apache License](https://img.shields.io/badge/license-Apache-blue.svg?style=flat)](LICENSE)
 
+# Build 
+```
+docker build --platform linux/arm64 -t prnewsio/hc-pdf-server:0.2.arm --network=host --force-rm --no-cache .
+docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+docker push prnewsio/hc-pdf-server:0.2.arm
+```
+
 # hc-pdf-server
 
 convert HTML to PDF server by Headless Chrome.
